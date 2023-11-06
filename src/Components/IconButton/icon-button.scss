@@ -12,6 +12,7 @@ $yellow-c-sh:  var(---main-shadow-yellow, #B963004D);
 $yellow-c-sh2:  var(--main-shadow-yellow2, #B9630026);
 
 button.rdc_icon-btn {
+    box-sizing: border-box;
     height: 32px;
     padding: 0px 8px 0px 8px;
 

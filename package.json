@@ -8,11 +8,11 @@
     "dist/**/*"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/a.polshin"
+    "registry": "https://npm.pkg.github.com/andrewkolovrat"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/M-fil/ui-kit-test-lib.git"
+    "url": "git+https://github.com/AndewKolovrat/NvxReactUI"
   },
   "types": "dist/index.d.ts",
   "scripts": {

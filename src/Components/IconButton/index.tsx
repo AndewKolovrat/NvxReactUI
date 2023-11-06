@@ -1,4 +1,4 @@
-import React from 'react';
+import { Button } from 'reactstrap';
 import classNames from 'classnames';
 import "./icon-button.scss";
 
@@ -18,7 +18,7 @@ interface IIconButtonProps  {
 
 const IconButton: React.FC<IIconButtonProps> = (props) => {
 
-    const { children, color = "blue", centered, disabled, outline = false, bordered, isWaiting, cssClass, iconClass, ...otherProps } = props;
+    const { children, color = "blue", centered, outline = false, bordered, isWaiting, cssClass, iconClass, ...otherProps } = props;
 
     const classes = classNames('rdc_icon-btn', cssClass, color, {
         'rdc_outline': outline,
@@ -44,9 +44,9 @@ const IconButton: React.FC<IIconButtonProps> = (props) => {
     };
 
     return (
-        <button className={classes} disabled={disabled} {...otherProps}>
+        <Button className={classes} {...otherProps}>
             {renderContent()}
-        </button>
+        </Button>
     );
 }
 
