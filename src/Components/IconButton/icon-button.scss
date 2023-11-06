@@ -1,0 +1,125 @@
+
+$main_color: var(--main-color, #2196F3);
+$disabled: var(--menu-font-color-disable, #D1D5DF);
+$hovered: var(--main-bg-c-hover, #828F9C1A);
+$shadow-c: var(--main-shadow-color, #2196F34D);
+$shadow-c2: var(--main-shadow-color-v2, #2196F326);
+$text-c-hovered: var(--main-text-color-hover, #2167BA );
+
+$yellow-c: var(--main-color-yellow, #FFA900);
+$yellow-c-active:  var(--main-color-yellow, #F19100);
+$yellow-c-sh:  var(---main-shadow-yellow, #B963004D);
+$yellow-c-sh2:  var(--main-shadow-yellow2, #B9630026);
+
+button.rdc_icon-btn {
+    height: 32px;
+    padding: 0px 8px 0px 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    background-color: transparent;
+    color: $main_color;
+    fill: $main_color;
+
+    font-family: Lato;
+    font-weight: 400;
+    font-size: 16px;
+
+    border: none !important;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.022em;
+    text-align: center;
+
+
+    & > span {
+        margin-right: 5px;
+    }
+
+}
+
+button.rdc_icon-btn.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button.rdc_icon-btn.bordered {
+    border: 2px solid !important;
+}
+
+button.rdc_icon-btn:hover {
+    background-color: $hovered;
+    color: $main_color;
+    fill: $main_color;
+}
+
+button.rdc_icon-btn:active {
+    background-color: $main_color !important;
+    color: white;
+    fill: white;
+}
+
+button.rdc_icon-btn.rdc_outline.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+    color: $disabled;
+    fill: $disabled;
+    pointer-events: none;
+    background-color: transparent;
+    opacity: 1;
+}
+
+button.rdc_icon-btn.rdc_outline.blue {
+    background-color: transparent;
+    color: $main_color;
+    fill: $main_color;
+}
+button.rdc_icon-btn.rdc_outline.blue:hover {
+    background-color: $hovered;
+    color: $main_color;
+    fill: $main_color;
+}
+button.rdc_icon-btn.rdc_outline.blue:active {
+    background-color: $main_color !important;
+    color: white;
+    fill: white;
+}
+button.rdc_icon-btn.rdc_outline.blue.disabled {
+    color: $disabled;
+    fill: $disabled;
+}
+
+button.rdc_icon-btn:not(.rdc_outline).blue {
+    background-color: $main_color;
+    color: white;
+    fill: white;
+}
+button.rdc_icon-btn:not(.rdc_outline).blue:hover {
+    box-shadow: 2px 2px 3px 0px $shadow-c, 6px 6px 10px 0px $shadow-c2;
+}
+button.rdc_icon-btn:not(.rdc_outline).blue:active {
+    background: $text-c-hovered !important;
+    color: white;
+    fill: white;
+}
+
+button.rdc_icon-btn:not(.rdc_outline).disabled {
+    background: $disabled !important;
+}
+
+button.rdc_icon-btn:not(.rdc_outline).yellow {
+    background-color: $yellow-c;
+    color: white;
+    fill: white;
+}
+button.rdc_icon-btn:not(.rdc_outline).yellow:hover {
+    box-shadow: 2px 2px 3px 0px $yellow-c-sh, 6px 6px 10px 0px $yellow-c-sh2;
+}
+button.rdc_icon-btn:not(.rdc_outline).yellow:active {
+    background: $yellow-c-active !important;
+    color: white;
+    fill: white;
+}
