@@ -7,12 +7,19 @@
   "files": [
     "dist/**/*"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/a.polshin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-fil/ui-kit-test-lib.git"
+  },
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "sb": "storybook dev -p 6006",
     "build-sb": "storybook build",
-    "deploy-sb": "npm run storybook build && gh-pages -d storybook-static"
+    "deploy-sb": "storybook build && gh-pages -d storybook-static"
   },
   "author": "a.polshin",
   "license": "ISC",
