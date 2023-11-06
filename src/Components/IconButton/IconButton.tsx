@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import "./icon-button.scss";
 
-export interface IIconButtonProps  {
+interface IIconButtonProps  {
     cssClass?: string;
     iconClass?: string;
     isWaiting?: boolean;
