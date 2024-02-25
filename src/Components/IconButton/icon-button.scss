@@ -11,6 +11,9 @@ $yellow-c-active:  var(--main-color-yellow, #F19100);
 $yellow-c-sh:  var(---main-shadow-yellow, #B963004D);
 $yellow-c-sh2:  var(--main-shadow-yellow2, #B9630026);
 
+$green-c: var(---rdc-green-color, #2D9E4D);
+$green-c-active:  var(--rdc-green-a-color, #1D7235);
+
 button.rdc_icon-btn {
     height: 32px;
     padding: 0px 8px 0px 8px;
@@ -43,6 +46,11 @@ button.rdc_icon-btn {
 
 }
 
+button.rdc_icon-btn.block {
+    width: 100%;
+    justify-content: center;
+}
+
 button.rdc_icon-btn.centered {
     margin-left: auto;
     margin-right: auto;
@@ -50,11 +58,6 @@ button.rdc_icon-btn.centered {
 
 button.rdc_icon-btn.bordered {
     border: 2px solid !important;
-}
-
-button.rdc_icon-btn.is-block {
-    width: 100%;
-    display: block !important;
 }
 
 button.rdc_icon-btn:hover {
@@ -120,25 +123,48 @@ button.rdc_icon-btn:not(.rdc_outline).yellow {
     color: white;
     fill: white;
 }
-button.rdc_icon-btn:not(.rdc_outline).yellow:hover {
+button.rdc_icon-btn.rdc_outline.yellow {
+    background-color: transparent;
+    color: $yellow-c;
+    fill: $yellow-c;
+}
+button.rdc_icon-btn.yellow:hover {
     box-shadow: 2px 2px 3px 0px $yellow-c-sh, 6px 6px 10px 0px $yellow-c-sh2;
 }
-button.rdc_icon-btn:not(.rdc_outline).yellow:active {
+button.rdc_icon-btn.yellow:active {
     background: $yellow-c-active !important;
     color: white;
     fill: white;
 }
 
+button.rdc_icon-btn:not(.rdc_outline).green {
+    background-color: $green-c;
+    color: white;
+    fill: white;
+}
+button.rdc_icon-btn:not(.rdc_outline).green:hover {
+    box-shadow: 2px 2px 3px 0px #248E424D, 6px 6px 16px 0px #248E4226;
+}
+button.rdc_icon-btn:not(.rdc_outline).green:active {
+    background: $green-c-active !important;
+    color: white;
+    fill: white;
+}
+
+
 .rdc_small_spiner {
     display: inline-block;
     width: 18px;
     height: 18px;
-    padding: 3px;
+    padding: 5px 3px;
     aspect-ratio: 1;
     border-radius: 50%;
-    background: conic-gradient(from 90deg at 50% 50%, var(--main-color, #fff) 0deg, rgba(33, 150, 243, 0) 360deg);
+    background: conic-gradient(from 90deg at 50% 50%, var(--rdc-main-color, #2196F3) 0deg, rgba(33, 150, 243, 0) 360deg);
     -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 3px),#000 0);
     animation: s3 1s infinite linear;
+}
+button.rdc_icon-btn.blue > .rdc_small_spiner {
+    background: conic-gradient(from 90deg at 50% 50%, white 0deg, rgba(33, 150, 243, 0) 360deg);
 }
 @keyframes s3{ 
 	100%{transform: rotate(1turn)}

@@ -1,22 +1,29 @@
 import React, { useState } from 'react';
-import IconButton from "../../IconButton/IconButton";
+import IconButton from '../../IconButton';
+import TextHint from '../../TextHint';
 import classNames from "classnames";
-import { ReactComponent as Arrow } from './arrow.svg';
-import { ItemType } from '..';
+import { TreeListItemType } from '..';
+
 
 interface ITreeListItemPros {
 	index: number;
-	item: ItemType;
+	item: TreeListItemType;
 	activePreset?: string;
-	onClick?: (item: ItemType) => void;
+	onClick?: (item: TreeListItemType) => void;
 };
 
 const TreeListItem: React.FC<ITreeListItemPros> = ( { item, activePreset, onClick, index } ) => {
 
-	const [ exItem, setExItem ] = useState<ItemType>(item);
+	const [ exItem, setExItem ] = useState<TreeListItemType>(item);
 
-	const onClickHandler = (e: React.MouseEvent<HTMLLIElement>, item: ItemType) => {
+	const onClickHandler = (e: React.MouseEvent<HTMLLIElement>, item: TreeListItemType ) => {
 		e.stopPropagation();
+		setExItem( prev => {
+			return {
+				...prev,
+				isExpand: !prev.isExpand
+			};
+		});
 		if ( !!onClick && !exItem.isDisabled ) {
 			onClick(item);
 		} 
@@ -32,7 +39,7 @@ const TreeListItem: React.FC<ITreeListItemPros> = ( { item, activePreset, onClic
 		});
 	};
 
-	const getNodeClasses = (item: ItemType) => classNames("treelist_node", {
+	const getNodeClasses = (item: TreeListItemType) => classNames("treelist_node", {
 		"treelist_node_end": !item.subItems?.length,
 		"open": item.isExpand,
 		"active": exItem.isActive || ( !!item.id && activePreset === item.id),
@@ -46,11 +53,13 @@ const TreeListItem: React.FC<ITreeListItemPros> = ( { item, activePreset, onClic
 			id={ !!exItem.id ? exItem.id : index.toString() }
 			onClick={ e => onClickHandler(e, exItem) }
 		>
-			<div className="treelist_node-mnu hint" data-hint={exItem.title}>
+			<div className="treelist_node-mnu " data-hint={exItem.title}>
 				<IconButton outline disabled={!exItem.subItems?.length} onClick={onExpandItemHandler}>
-					<Arrow className='treelist-expand_icon' aria-hidden={!exItem.subItems?.length}/>
+					<svg className='treelist-expand_icon' aria-hidden={!exItem.subItems?.length} width="30" height="32" viewBox="0 0 30 32" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13.5 21L18.5 16L13.5 11V21Z" fill="inherit"/>
+					</svg>
 				</IconButton>
-				<span className="treelist_node-title">{exItem.title}</span>
+				<TextHint className="treelist_node-title">{exItem.title}</TextHint>
 			</div>
 			{
 				(!!exItem.subItems?.length && !!exItem.isExpand ) &&

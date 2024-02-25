@@ -13,6 +13,12 @@ const meta: Meta<typeof SearchInput> = {
 	tags: ['autodocs'],
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 	argTypes: {
+		debounceDelay: {
+			description: "Задержка перед вызовом метода 'onSearch' в мс, после изменения значения. При значении -1 задержки не будет."
+		},
+		onSearch: {
+			description: "Вызывается при редактировании значения поисковой строки"
+		}
 	},
 };
 
@@ -22,5 +28,6 @@ type Story = StoryObj<typeof SearchInput>;
 
 export const Default: Story = {
 	args: {
+		debounceDelay: 500
 	},
 };

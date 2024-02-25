@@ -1,0 +1,113 @@
+
+.calendar {
+	display: flex;
+	max-width: min-content;
+	padding-bottom: 0px;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	padding: 16px 24px;
+	flex: 1 0 0;
+	align-self: stretch;
+	border-radius: 12px;
+	background: var(--white-to-black-ffffff, #FFF);
+	/* Blue new style */
+	box-shadow: 0px 0px 35px 0px rgba(182, 205, 233, 0.80), 0px 1px 4px 0px rgba(25, 117, 186, 0.25);
+
+
+	&__header {
+		display: flex;
+		padding: 0;
+		justify-content: space-between;
+		align-items: center;
+		align-self: stretch;
+		border-radius: 6px 6px 0px 0px;
+		background: var(--white-to-black-ffffff, #FFF);
+
+		color: var(--white-to-black-112-e-4-a-text-color, #173261);
+		text-align: center;
+		font-family: Lato;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 24px; /* 120% */
+
+		& > h4 {
+			margin: 0 0 0 24px;
+			flex-grow: 1;
+		}
+	}
+
+	&__placeholder {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+
+		& > .wrapper {
+			display: flex;
+			width: 100%;
+			align-items: center;
+			justify-content: space-between;
+			gap: 5px;
+		}
+
+		&-input {
+			display: flex;
+			width: 150px;
+			height: 38px;
+			display: flex;
+			align-items: center;
+			flex: 1 0 0;
+			align-self: stretch;
+			gap: 10px;
+			flex: 1 0 0;
+			border-radius: 6px;
+			padding: 4px 6px 4px 8px;
+			border: 1px solid var(--white-to-black-d-1-d-5-df-secondary-text-color, #D1D5DF);
+			background: var(--blue-f-9-fbffdg-color, #F3F7FF);
+
+			color: var(--white-to-black-828-f-9-c, #828F9C);
+
+			/* Body */
+			font-family: Lato;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 24px; /* 150% */
+			letter-spacing: -0.352px;
+		}
+
+		&-input.active {
+			border: 1px solid var(--main-color, #2196F3);
+		}
+
+	}
+
+	&__controls {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+
+		&-navbtns {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 8px;
+
+			& button {
+				width: 32px;
+				padding: 0;
+			}
+
+			& button:last-child > svg {
+				transform: rotate(0.5turn);
+			}
+
+		}
+	}
+
+}

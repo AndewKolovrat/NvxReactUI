@@ -1,0 +1,32 @@
+
+input[type="radio"].rd-radio {
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 0.14em solid;
+	border-color: inherit;
+	cursor: pointer;
+	position: relative;
+}
+
+input[type="radio"].rd-radio:disabled {
+	border-color: var(--form-radio-color-disabled);
+}
+
+input[type="radio"].rd-radio:checked:after {
+	position: absolute;
+	top: 3px;
+    right: 3px;
+	content: "";
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: inherit;
+	background: var(--form-radio-color);
+}
+
+:active input[type="radio"].rd-radio:checked:after {
+	background-color: white;
+}

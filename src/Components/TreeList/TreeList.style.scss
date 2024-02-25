@@ -15,7 +15,7 @@
 	line-height: 24px;
 	letter-spacing: -0.022em;
 	text-align: left;
-	color: var( --main-font-color, #173261);
+	color: var( --rdc-font-color, #173261);
 
 	&-wrapper {
 		margin-top: 8px;
@@ -63,11 +63,11 @@ li.treelist_node:not(.disable).active > .treelist_node-mnu > button > .treelist-
 li.treelist_node:not(.disable) > .treelist_node-mnu:active > button > .treelist-expand_icon {
 	color: white;
 	fill: white !important;
-	background-color: var(--main-color, #2196F3) !important;
+	background-color: var(--rdc-main-color, #2196F3) !important;
 }
 
 .treelist .treelist_node.disable > .treelist_node-mnu {
-	color: var(--main-text-c-disable, #D4D4D4);
+	color: var(--rdc-font-color-disable, #D4D4D4);
 }
 
 .treelist .treelist_node .treelist-expand_icon {

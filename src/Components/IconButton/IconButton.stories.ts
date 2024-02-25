@@ -13,6 +13,10 @@ const meta: Meta<typeof IconButton> = {
 	tags: ['autodocs'],
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 	argTypes: {
+		color: {
+			defaultValue: "blue",
+			description: "Цвет кнопки"
+		}
 	},
 };
 
@@ -23,5 +27,9 @@ type Story = StoryObj<typeof IconButton>;
 export const Default: Story = {
 	args: {
 		children: 'Button',
+		color: "blue",
+		iconClass: 'icon-applicants',
+		isWaiting: false,
+		disabled: true
 	},
 };

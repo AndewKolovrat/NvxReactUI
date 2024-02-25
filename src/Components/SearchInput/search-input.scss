@@ -6,11 +6,11 @@
 	height: 38px;
 	padding: 0 15px;
 
-	border: 1px solid #D1D5DF !important;
+	border: 1px solid var(--rdc-font-color-disable, #D1D5DF) !important;
 	border-radius: 6px;
 
 	background: linear-gradient(0deg, #F9FBFF, #F9FBFF),
-		linear-gradient(0deg, #D1D5DF, #D1D5DF);
+		linear-gradient(0deg, var(--rdc-font-color-disable, #D1D5DF), var(--rdc-font-color-disable, #D1D5DF));
 
 	font-size: 16px;
 	font-weight: 400;
@@ -19,34 +19,39 @@
 	text-align: left;
 
 	&.disabled {
-		background: var(--secondary-text-color);
+		background: var(--rdc-font-color-disable, #D1D5DF);
 	}
 
 	& > .menu-icon {
 		font-size: 17px;
-		color: var(--main-color);
+		color: var(--rdc-main-color, #2196F3);
 	}
 
 	& > input {
 		width: 100%;
 		padding: 0 10px;
-		color: var(--modal-c-font);
+		color: var(--rdc-font-color, #173261);
 	}
 
 	& > input::-webkit-input-placeholder {
-		color: var(--main-font-color-disable);
+		color: var(--rdc-font-color-disable, #D1D5DF);
 	}
 
 	& > button {
-		fill: var(--main-color);
+		height: 16px;
+		fill: var(--rdc-main-color, #2196F3);
 	}
 
 	& > button:hover {
-		fill: var(--main-error-color);
+		fill: var(--rdc-error-color, #FF3140);
 	}
 
 	& > button:active {
-		fill: var(--main-error-active-color);
+		fill: var(--rdc-error-color-active, #CC2733);
 	}
 
+}
+
+.rdc_hidden {
+    visibility: hidden;
 }

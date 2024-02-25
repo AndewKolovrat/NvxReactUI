@@ -7,7 +7,8 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
-    '@storybook/preset-scss'
+    '@storybook/preset-scss',
+    "@storybook/addon-mdx-gfm"
   ],
   framework: {
     name: "@storybook/react-webpack5",

@@ -1,0 +1,41 @@
+
+.rdc_badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 10px;
+    gap: 10px;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 8px;
+    text-decoration: initial !important;
+}
+
+.rdc_badge:not(.rdc_disabled) {
+    color: var(--rdc-font-secondary, #112E4A );
+    background-color: #D1D5DF;
+}
+
+.rdc_rounded-pill {
+    border-radius: 50rem !important;
+}
+
+.rdc_badge-red:not(.rdc_disabled) {
+    background-color: #FFE0DD !important;
+}
+
+.rdc_badge-blue:not(.rdc_disabled) {
+    background-color: #C2E7FF !important;
+}
+
+.rdc_badge-green:not(.rdc_disabled) {
+    background-color: #CFF2D9 !important;
+}
+
+.rdc_badge-yellow:not(.rdc_disabled) {
+    background-color: #FEF0CC !important;
+}
+
+.rdc_badge-gray:not(.rdc_disabled) {
+    background-color: #D1D5DF !important;
+}

@@ -1,0 +1,55 @@
+
+
+.root {
+    padding: 3px;
+}
+
+.grid {
+    font-family: '"Roboto", "Helvetica", "Arial", sans-serif';
+    // backgroundColor: theme.palette.background.default;
+    border: 1px solid black;
+}
+
+.columnHeader {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rowHeader {
+    border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+  
+.cell {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.dragHandle {
+    flex: 0 0 16px;
+    z-index: 2;
+    cursor: col-resize;
+    background-color: black !important;
+}
+
+.dragHandleActive {
+    &:hover {
+      color: rgba(0, 0, 0, 0.8);
+      z-index: 3;
+    }
+}
+
+.dragHandleIcon {
+    flex: 0 0 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    height: 100%;
+}

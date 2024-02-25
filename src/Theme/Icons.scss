@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('assets/Fonts/icomoon.eot?qnawbj');
+    src:  url('assets/Fonts/icomoon.eot?qnawbj#iefix') format('embedded-opentype'),
+      url('assets/Fonts/icomoon.ttf?qnawbj') format('truetype'),
+      url('assets/Fonts/icomoon.woff?qnawbj') format('woff'),
+      url('assets/Fonts/icomoon.svg?qnawbj#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    text-align: center;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+.icon-32 {
+    font-size: 32px;
+}
+
+.icon-24 {
+    font-size: 24px;
+}
+
+.icon-18 {
+    font-size: 18px;
+}
+
+  .icon-applicants:before {
+    content: "\e900";
+  }
+  .icon-archive:before {
+    content: "\e901";
+  }
+  .icon-bell:before {
+    content: "\e902";
+  }
+  .icon-cases:before {
+    content: "\e903";
+  }
+  .icon-cr:before {
+    content: "\e904";
+  }
+  .icon-electronic_queue:before {
+    content: "\e905";
+  }
+  .icon-gisgmp:before {
+    content: "\e906";
+  }
+  .icon-link:before {
+    content: "\e907";
+  }
+  .icon-menu-right:before {
+    content: "\e908";
+  }
+  .icon-personal_account:before {
+    content: "\e909";
+  }
+  .icon-plus:before {
+    content: "\e90a";
+  }
+  .icon-reception:before {
+    content: "\e90b";
+  }
+  .icon-registry:before {
+    content: "\e90c";
+  }
+  .icon-reports:before {
+    content: "\e90d";
+  }
+  .icon-search:before {
+    content: "\e90e";
+  }
+  .icon-services:before {
+    content: "\e90f";
+  }
+  .icon-sps:before {
+    content: "\e910";
+  }
+  .icon-tasks:before {
+    content: "\e911";
+  }
+  .icon-timetable:before {
+    content: "\e912";
+  }
+  .icon-help:before {
+    content: "\e913";
+  }
+  

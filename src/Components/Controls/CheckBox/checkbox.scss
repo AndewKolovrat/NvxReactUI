@@ -1,0 +1,50 @@
+
+
+.rdcc input[type="radio"],
+.rdcc input[type="checkbox"],
+.rdcc input[type="checkbox"] {
+	width: 18px;
+	height: 18px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	position: relative;
+	float: left;
+	margin: 2px;
+	border: 2px solid #2196F3;
+	border-radius: 3px;
+	box-shadow: none;
+	background-color: #fff;
+	cursor: pointer;
+}
+.rdcc input[type="radio"]:hover,
+.rdcc input[type="checkbox"]:hover,
+.rdcc input[type="checkbox"]:hover {
+	opacity: 1;
+	border-color: #2167BA;
+}
+.rdcc input[type="checkbox"]:checked,
+.rdcc input[type="checkbox"]:checked {
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22100%22%3E%3Cpath%20d%3D%22M100%2017.044l-52.898%2078.956h-1.775l-45.326-39.164%2012.794-16.762%2029.869%2025.744%2040.888-61.044%2016.449%2012.272z%22%20fill%3D%22%23FFF%22%2F%3E%3C%2Fsvg%3E);
+	background-size: 80%;
+	background-color: #2196F3;
+	transition: none;
+}
+.rdcc input[type="checkbox"]:checked:hover,
+.rdcc input[type="checkbox"]:checked:hover {
+	background-color: #2167BA;
+}
+.rdcc input:not([type=radio]):not([type=checkbox]):not([type=file]),
+.rdcc textarea {
+	width: 100%;
+	height: 36px;
+	padding: 9px 10px 9px 16px;
+	border: 1px solid #D1D5DF;
+	border-radius: 6px;
+	vertical-align: middle;
+}
+.rdcc input:not([type=radio]):not([type=checkbox]):not([type=file]):focus,
+.rdcc textarea:focus {
+	outline: none;
+}

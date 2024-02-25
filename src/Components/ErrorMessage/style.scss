@@ -1,0 +1,16 @@
+
+
+.rdc_invalid-feedback {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: var(--main-error-color);
+    margin: 0;
+}
+
+.rdc_invalid-feedback > svg {
+    margin-right: 4px;
+    vertical-align: text-bottom;
+}
