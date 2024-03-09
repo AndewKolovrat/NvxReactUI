@@ -8,7 +8,8 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
     '@storybook/preset-scss',
-    "@storybook/addon-mdx-gfm"
+    "@storybook/addon-mdx-gfm",
+    'storybook-preset-inline-svg'
   ],
   framework: {
     name: "@storybook/react-webpack5",

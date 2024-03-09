@@ -23,6 +23,16 @@ module.exports = {
         parserOptions: {
           project: ['./tsconfig.json']
         }
+      },
+      {
+        name: 'storybook-preset-inline-svg',
+        options: {
+          include: /source\/.+\.svg$/,
+          svgInlineLoaderOptions: {
+            removeTags: true,
+            removingTags: ['circle']
+          }
+        }
       }
     ],
     plugins: [

@@ -36,6 +36,11 @@
 	background: #FfF;
 	border: 1px solid transparent;
 
+	&__input,
+	&__placeholder {
+		width: 100%;
+	}
+
 	&:hover {
 		border-color: var(--main-color, #2196F3);
 	}

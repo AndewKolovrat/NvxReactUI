@@ -22,7 +22,7 @@
 		"strictNullChecks": false,
 		"baseUrl": ".",
 		"paths": {
-			"Src/*": [ "src/*" ],
+			"src/*": [ "src/*" ],
 			"Types/*": [ "src/Types/*" ],
 			"Utils/*": [ "src/Utils/*" ]
 		}
