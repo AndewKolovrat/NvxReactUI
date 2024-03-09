@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react';
-import { IconButton, ErrorMessage } from "src/Components";
+import { IconButton, ErrorMessage, ClearBtn } from "src/Components";
 import MaskInput from "../MaskInput/MaskInput";
 import SimpleSelect, { EnumsType } from "../SimpleSelect/SimpleSelect";
 import classNames from 'classnames';
 import DateFormater from "src/Utils/DateFormater";
-import { ReactComponent as CloseIcon } from './CloseBtn.svg';
-import { ReactComponent as Shevron } from './chevron-left.svg';
+import { ReactComponent as Shevron } from './Assets/chevron-left.svg';
 import styles from './datapicker.module.scss'
 import "./DatePicker.scss";
+import { DataPickerPlaceHolder } from './DatePickerPlaceholder';
 
 interface DatePickerProps {
+	isPlaceHolder?: boolean;
 	value: Date | null | [Date, Date];
 	setValue: ( value: any ) => void;
+	onClear: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+	onClose?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 	headless?: boolean;
 	isBetween?: boolean;
 	withTime?: boolean;
@@ -23,7 +26,7 @@ interface DatePickerProps {
 
 const DatePicker: React.FC<DatePickerProps> = (props) => {
 
-	const { disabled = false, value, setValue, headless = false, isBetween = false, 
+	const { disabled = false, value, setValue, onClear, onClose, headless = false, isBetween = false, isPlaceHolder = false,
 		minDate = new Date(OLD_YEAR, 0, 1),
  		maxDate = new Date(MAX_YEAR, 11, 31)
 	} = props;
@@ -48,6 +51,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
 
 	/** При монтировании компонента, вычисляем список доступных годов  */
 	useEffect(() => {
+		if ( isPlaceHolder ) return;
 		const years = Array(maxDate.getFullYear() - minDate.getFullYear() + 1)
 			.fill(0)
 			.map((_, index) => (maxDate.getFullYear() - index));
@@ -73,6 +77,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
 	 * месяц и год календаря  
 	 */
 	useEffect(() => {
+		if ( isPlaceHolder ) return;
 		if ( Array.isArray(value) ) {
 			setCurrentParams( changeStart ? parseDate(value[0]) : parseDate(value[1]) );
 		}
@@ -84,6 +89,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
 
 	/** Генерируем массив с днями  */
 	useEffect(() => {
+		if ( isPlaceHolder ) return;
 		// День недели первого дня, установленного месяца
 		const firstDayThisMonth = new Date(year, month, 1).getDay();
 		const temp = [];
@@ -94,7 +100,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
 			temp.push(new Date(year, month, i - day, 0, 0, 0, 0 ));
 		}
 		setCalendar(temp);
-	}, [month, year])
+	}, [ isPlaceHolder, month, year ] );
 
 	const setCurrentParams = ( date: Date|null ) => {
 		const cur = !!date ? date : now;
@@ -165,9 +171,7 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
 		return (
 			<div className="calendar__header">
 				<h4>Календарь</h4>
-				<IconButton outline>
-					<CloseIcon />
-				</IconButton>
+				<ClearBtn isClose onClick={onClose} />
 			</div>
 		);
 	};
@@ -292,6 +296,10 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
 		</div>
 	);
 
+	if ( isPlaceHolder ) {
+		return <DataPickerPlaceHolder isBetween={isBetween} value={value} onClear={onClear} />;
+	}
+
 	return (
 		<div className="calendar">
 			{renderHead()}
@@ -299,7 +307,6 @@ const DatePicker: React.FC<DatePickerProps> = (props) => {
 			{renderControls()}
 			{renderBody()}
 		</div>
-		
 	);
 };
 
